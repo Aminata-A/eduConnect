@@ -1,8 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #fffcf4;
   margin: 0;
   font-family: "Barlow", sans-serif;
   color: #1e1336;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -31,21 +36,27 @@ h2 {
 /* Section header */
 header {
   background-color: #392467;
-  height: 80px;
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px 0 30px;
+  padding: 15px 30px;
 }
 
 header div {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
-  width: 50%;
+}
+header div img {
+  display: none;
 }
 
 header div a {
+  margin-left: 1em;
   color: #fff3da;
   text-decoration: none;
   text-transform: uppercase;
@@ -62,12 +73,14 @@ header div a {
   background-image: linear-gradient(rgba(255, 227, 168, 0.864), rgba(255, 243, 218, 0.426)), url("images/Banniere.jpg");
   min-height: 90vh;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
 }
 
 /* Section Banniere */
 .content_banniere {
-  width: 40%;
+  width: 31em;
   padding: 30px;
 }
 
@@ -97,6 +110,7 @@ header div a {
 
 .boutton_div {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 70%;
 }
@@ -104,6 +118,7 @@ header div a {
 /* Section content */
 .section-content {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -113,20 +128,23 @@ header div a {
 .section-content .total-content {
   width: 90%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
 }
 
 .carte {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
   width: 80%;
   text-align: center;
   align-items: center;
 }
 
 .carte div {
-  width: 30%;
+  width: 15em;
+  margin-top: 3em;
 }
 
 /* Section violet content */
@@ -136,6 +154,7 @@ header div a {
 
 .total-section-content {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   padding: 5em;
@@ -143,30 +162,41 @@ header div a {
 
 .section-violet-div {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
   margin-top: 20px;
 }
 
 .section-violet-div div {
-  width: 22%;
+  width: 15em;
+  margin: 0 1em 3em 0;
 }
 
 /* Section commentaire */
 .commentaires {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
 }
 
 .commentaire {
   display: flex;
+  flex-wrap: wrap;
+  position: relative;
   align-items: center;
   justify-content: space-around;
-  width: 40%;
+  width: 31em;
   background-color: #fff3da;
-  padding: 5px;
+  padding: 2em;
   border-radius: 6px;
   margin-top: 3em;
+}
+.commentaire .comment-img {
+  z-index: 2;
+  position: relative;
 }
 
 .commentaire .image-comment {
@@ -185,7 +215,7 @@ header div a {
 }
 
 .comment-texte {
-  width: 40%;
+  width: 45%;
   position: relative;
 }
 
@@ -196,21 +226,21 @@ header div a {
 .quote-left {
   position: absolute;
   z-index: 0;
-  top: -6em;
-  left: 0;
+  top: -2.3em;
+  left: 1em;
 }
 
 .quote-right {
   position: absolute;
   z-index: 0;
-  bottom: -3.2em;
-  right: 0;
+  bottom: -2.3em;
+  right: 1em;
 }
 
 /*Nos partenaire*/
 @keyframes slide {
   from {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
   to {
     transform: translateX(-100%);
@@ -247,12 +277,13 @@ header div a {
 }
 
 .logo-slide {
-  display: flex;
+  white-space: nowrap;
   animation: 15s slide infinite linear;
 }
 
 .logo-slide img {
   height: 70px;
+  padding: 0 3em;
 }
 
 /* Footer */
@@ -261,15 +292,17 @@ footer {
   color: #fff3da;
   padding: 3em;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .footer-content {
-  width: 20%;
+  width: 15em;
 }
 
 .contact-info {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   line-height: 0;
 }
@@ -280,6 +313,7 @@ footer {
 
 .liens {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   line-height: 30px;
 }
@@ -290,109 +324,39 @@ footer {
 }
 
 .subscribe input {
+  margin-top: 10px;
   background-color: #D3C5C1;
   color: #7D6B8F;
   border: none;
   border-radius: 3px;
+  padding: 10px 20px;
+  width: 100%;
 }
 
 button {
   background-color: #fff3da;
   color: #392467;
   border: none;
-  width: 12.5em;
+  width: 100%;
   border-radius: 3px;
+  padding: 10px 20px;
+  margin-top: 10px;
 }
 
-/* Media Queries */
-@media (max-width: 1024px) {
-  .section-content {
-    padding: 20px;
-  }
-  .carte {
-    flex-direction: column;
-    align-items: center;
-  }
-  .carte div {
-    width: 80%;
-    margin-bottom: 20px;
-  }
-  .section-violet-div {
+@media screen and (max-width: 810px) {
+  header div {
     flex-direction: column;
   }
-  .section-violet-div div {
-    width: 80%;
-    margin-bottom: 20px;
+  header div img {
+    display: block;
   }
-}
-@media (max-width: 768px) {
-  .header div {
-    flex-direction: column;
-    width: 100%;
+  header div a {
+    margin-top: 1em;
   }
-  .header div a {
-    margin-bottom: 10px;
-  }
-  .banniere {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .content_banniere {
-    width: 80%;
-  }
-  .boutton_div {
-    flex-direction: column;
-    width: 100%;
-  }
-  .boutton {
-    margin-bottom: 10px;
-  }
-  .section-content .total-content {
-    width: 100%;
-  }
-  .texte-section {
-    width: 100%;
-  }
-  .carte div {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .commentaire {
-    flex-direction: column;
-    width: 80%;
+  header div div {
+    display: none;
   }
   .comment-texte {
-    width: 100%;
-  }
-  .footer-content {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  footer {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-@media (max-width: 480px) {
-  header {
-    flex-direction: column;
-    height: auto;
-  }
-  .banniere {
-    padding: 20px;
-  }
-  .content_banniere {
-    width: 100%;
-  }
-  .section-content {
-    padding: 10px;
-  }
-  .section-violet-div div {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  .commentaire {
-    width: 100%;
+    width: 90%;
   }
 }/*# sourceMappingURL=style.css.map */
