@@ -71,7 +71,8 @@ header div a {
 
 .banniere {
   background-image: linear-gradient(rgba(255, 227, 168, 0.864), rgba(255, 243, 218, 0.426)), url("images/Banniere.jpg");
-  min-height: 90vh;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
